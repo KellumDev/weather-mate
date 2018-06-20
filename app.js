@@ -4,6 +4,9 @@ var zipdb = require("zippity-do-dah");
 var ForecastIo = require("forecastio");
 
 var app = express(); 
+
+var port = process.env.PORT || 8080; 
+
 var weather = new ForecastIo("f86bf0ead620e4ae0bd2210787abfbdb"); 
  
 //serve static files 
@@ -63,8 +66,8 @@ app.use(function(req,res){
 	res.status(404).render("404");
 }); 
 
-app.listen(3000, function(){
-	console.log("the server is running on port 3000");
+app.listen(port, function(){
+	console.log("the server is running on port 8080");
 
 	
 	 
